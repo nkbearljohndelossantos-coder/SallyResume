@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume | Sally B. Darantinao">
+    <title>Resume | Sally B. Darantinao</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Admin Bar -->
+    <div id="admin-bar" class="admin-bar" style="display: none;">
+        <span><i class="fas fa-edit"></i> Edit Mode Active</span>
+        <div class="admin-actions">
+            <button id="btn-save-content" class="btn btn-primary btn-sm">Save Changes</button>
+            <button id="btn-change-pin-modal" class="btn btn-secondary btn-sm">Change PIN</button>
+            <button id="btn-logout" class="btn btn-secondary btn-sm"
+                style="border-color: #ef4444; color: #ef4444;">Logout</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 1.5rem; text-align: center;"><i class="fas fa-lock accent"></i> Enter Admin PIN
+            </h3>
+            <input type="password" id="pin-input" class="modal-input" placeholder="Enter PIN (Default: 1914)">
+            <p id="login-error" style="color: #ef4444; font-size: 0.9rem; margin-top: 0.5rem; display: none;">Incorrect
+                PIN.</p>
+            <button id="btn-login" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Login</button>
+        </div>
+    </div>
+
+    <div id="change-pin-modal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 1.5rem; text-align: center;"><i class="fas fa-key accent"></i> Change PIN</h3>
+            <input type="password" id="old-pin-input" class="modal-input" placeholder="Current PIN"
+                style="margin-bottom: 1rem;">
+            <input type="password" id="new-pin-input" class="modal-input" placeholder="New PIN"
+                style="margin-bottom: 1rem;">
+            <p id="pin-error" style="color: #ef4444; font-size: 0.9rem; display: none;"></p>
+            <button id="btn-save-pin" class="btn btn-primary" style="width: 100%;">Save New PIN</button>
+        </div>
+    </div>
+
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Sally<span class="accent">B.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal">
+                    <p class="subtitle">Welcome to my resume</p>
+                    <div id="editable-hero" class="editable-region">
+                        <h1><span class="accent glow">SALLY B.</span><br>DARANTINAO</h1>
+                        <h2 class="typewriter">Retail & Customer Service Professional</h2>
+                        <p class="description">A dedicated and hardworking individual with strong experience in retail
+                            and food service operations. Skilled in customer service, team leadership, and handling
+                            daily store operations efficiently. Proven ability to work under pressure while maintaining
+                            high standards of service, cleanliness, and professionalism. Committed to contributing to
+                            the success of the company and delivering excellent customer satisfaction.</p>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#experience" class="btn btn-primary">My Experience</a>
+                        <a href="#contact" class="btn btn-secondary"
+                            style="border-width: 0; padding-left: 0.5rem; text-decoration: underline;">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal-right">
+                    <div class="image-wrapper">
+                        <img src="https://lh3.googleusercontent.com/d/1atgpM16loHBnIk7AWJJVYhsN5G9D3iCw"
+                            alt="Profile Picture">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Profile Section -->
+        <section id="about" class="about" style="padding-top: 50px;">
+            <div class="container">
+                <h2 class="section-title reveal">My <span class="accent">Profile</span></h2>
+                <div class="about-content">
+                    <div class="about-text reveal-left glass" style="padding: 3rem; text-align: left;">
+                        <div id="editable-about" class="editable-region">
+                            <h3 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-user"
+                                    style="margin-right: 10px;"></i> Professional Summary</h3>
+                            <p style="text-align: left; font-size: 1.1rem; margin-bottom: 2rem;">A dedicated and
+                                hardworking individual with strong experience in retail and food service operations.
+                                Skilled in customer service, team leadership, and handling daily store operations
+                                efficiently. Proven ability to work under pressure while maintaining high standards of
+                                service, cleanliness, and professionalism. Committed to contributing to the success of
+                                the company and delivering excellent customer satisfaction.</p>
+
+                            <h3 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-bullseye"
+                                    style="margin-right: 10px;"></i> Objective</h3>
+                            <p style="text-align: left; font-size: 1.1rem;">To obtain a position in a dynamic and
+                                growth-oriented organization where I can effectively apply my skills, knowledge, and
+                                experience to contribute to the company’s success. I aim to continuously enhance my
+                                professional abilities, adapt to new challenges, and deliver high-quality work. I am
+                                committed to maintaining strong work ethics, providing excellent service, and supporting
+                                the organization’s goals through dedication, teamwork, and continuous learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills" style="padding-top: 50px;">
+            <div class="container">
+                <h2 class="section-title reveal">Core <span class="accent">Skills</span></h2>
+                <div class="admin-controls" style="display: none; text-align: center; margin-bottom: 2rem;">
+                    <button class="btn btn-secondary btn-sm" onclick="addSkillCategory()"><i class="fas fa-plus"></i>
+                        Add Skill Category</button>
+                    <button class="btn btn-secondary btn-sm" style="color: #ef4444; border-color: #ef4444;"
+                        onclick="removeLastSkillCategory()"><i class="fas fa-trash"></i> Remove Last</button>
+                    <button class="btn btn-secondary btn-sm" onclick="addSkillItem()"><i class="fas fa-plus"></i> Add
+                        Bullet Point</button>
+                    <button class="btn btn-secondary btn-sm" style="color: #ef4444; border-color: #ef4444;"
+                        onclick="removeLastSkillItem()"><i class="fas fa-trash"></i> Remove Bullet Point</button>
+                </div>
+                <div id="editable-skills" class="skills-grid reveal editable-region"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="skill-card glass" style="text-align: left; padding: 2rem;">
+                        <ul style="list-style: none; line-height: 2.2; color: var(--text-primary);">
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Customer Service
+                                Excellence</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Cash Handling &
+                                POS Operation</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Team Leadership &
+                                Supervision</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Communication &
+                                Interpersonal Skills</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Time Management &
+                                Multitasking</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card glass" style="text-align: left; padding: 2rem;">
+                        <ul style="list-style: none; line-height: 2.2; color: var(--text-primary);">
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Problem Solving &
+                                Conflict Resolution</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Inventory
+                                Management & Stock Replenishment</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Food Safety &
+                                Hygiene Standards</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Attention to
+                                Detail</li>
+                            <li><i class="fas fa-check-circle accent" style="margin-right: 10px;"></i> Adaptability &
+                                Work Under Pressure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="experience" style="padding-top: 50px;">
+            <div class="container">
+                <h2 class="section-title reveal">Work <span class="accent">Experience</span></h2>
+
+                <div class="admin-controls" style="display: none; text-align: center; margin-bottom: 2rem;">
+                    <button class="btn btn-secondary btn-sm" onclick="addExperienceItem()"><i class="fas fa-plus"></i>
+                        Add Experience</button>
+                    <button class="btn btn-secondary btn-sm" style="color: #ef4444; border-color: #ef4444;"
+                        onclick="removeLastExperienceItem()"><i class="fas fa-trash"></i> Remove Last</button>
+                </div>
+
+                <div id="editable-experience" class="timeline reveal editable-region">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass">
+                            <h3>Store Crew</h3>
+                            <span class="timeline-date">Dec 11, 2023 – Present | Alfamart Trading Philippines, Inc.,
+                                Sto. Domingo, Lubao, Pampanga</span>
+                            <ul
+                                style="color: var(--text-secondary); font-size: 0.95rem; margin-left: 1rem; line-height: 1.6;">
+                                <li style="margin-bottom: 0.5rem;">Assist customers with inquiries and product selection
+                                </li>
+                                <li style="margin-bottom: 0.5rem;">Handle cashiering and ensure accurate transactions
+                                </li>
+                                <li style="margin-bottom: 0.5rem;">Maintain cleanliness and organization of the store
+                                </li>
+                                <li style="margin-bottom: 0.5rem;">Restock shelves and monitor product displays</li>
+                                <li style="margin-bottom: 0.5rem;">Check product expiration and inventory levels</li>
+                                <li>Follow company policies and safety procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass">
+                            <h3>Team Leader / Shift Leader</h3>
+                            <span class="timeline-date">May 2023 - 2023 | KFC Guagua Highway, Guagua, Pampanga</span>
+                            <ul
+                                style="color: var(--text-secondary); font-size: 0.95rem; margin-left: 1rem; line-height: 1.6;">
+                                <li style="margin-bottom: 0.5rem;">Supervise and support team members during shifts</li>
+                                <li style="margin-bottom: 0.5rem;">Ensure smooth daily operations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass">
+                            <h3>Restaurant Team Member</h3>
+                            <span class="timeline-date">Nov 16, 2018 – 2023 | KFC Guagua Highway, Guagua,
+                                Pampanga</span>
+                            <ul
+                                style="color: var(--text-secondary); font-size: 0.95rem; margin-left: 1rem; line-height: 1.6;">
+                                <li style="margin-bottom: 0.5rem;">Provide excellent customer service and ensure
+                                    satisfaction</li>
+                                <li style="margin-bottom: 0.5rem;">Maintain food quality, cleanliness, and safety
+                                    standards</li>
+                                <li style="margin-bottom: 0.5rem;">Handle customer concerns and resolve complaints</li>
+                                <li>Assist in training new employees</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass">
+                            <h3>Factory Worker</h3>
+                            <span class="timeline-date">Mar 13, 2016 – Aug 13, 2016 | W.L. Food Corp., Caloocan
+                                City</span>
+                            <ul
+                                style="color: var(--text-secondary); font-size: 0.95rem; margin-left: 1rem; line-height: 1.6;">
+                                <li style="margin-bottom: 0.5rem;">Assist in production and packaging processes</li>
+                                <li style="margin-bottom: 0.5rem;">Maintain cleanliness of the work area</li>
+                                <li style="margin-bottom: 0.5rem;">Handle materials and equipment properly</li>
+                                <li>Follow safety and company procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass">
+                            <h3>Factory Worker</h3>
+                            <span class="timeline-date">Jan 25, 2016 – Jun 25, 2016 | JBC Food Corp., Caloocan
+                                City</span>
+                            <ul
+                                style="color: var(--text-secondary); font-size: 0.95rem; margin-left: 1rem; line-height: 1.6;">
+                                <li style="margin-bottom: 0.5rem;">Perform assigned tasks in the production line</li>
+                                <li style="margin-bottom: 0.5rem;">Ensure product quality and consistency</li>
+                                <li style="margin-bottom: 0.5rem;">Maintain cleanliness and organization of workspace
+                                </li>
+                                <li>Follow safety guidelines and company standards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="projects" style="padding-top: 50px;">
+            <div class="container">
+                <h2 class="section-title reveal"><span class="accent">Education</span></h2>
+
+                <div class="admin-controls"
+                    style="display: none; text-align: center; margin-bottom: 2rem; width: 100%;">
+                    <button class="btn btn-secondary btn-sm" onclick="addEducationItem()"><i class="fas fa-plus"></i>
+                        Add Education</button>
+                    <button class="btn btn-secondary btn-sm" style="color: #ef4444; border-color: #ef4444;"
+                        onclick="removeLastEducationItem()"><i class="fas fa-trash"></i> Remove Last</button>
+                </div>
+
+                <div id="editable-education-container" class="projects-grid editable-region"
+                    style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+
+                    <div id="editable-education-item" class="project-card glass reveal"
+                        style="padding: 3rem; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 600px; text-align: center;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem;">Don Honorio Ventura Technological State
+                            University</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">Bacolor, Pampanga</p>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">2014 - 2016</p>
+                    </div>
+                    <div id="editable-education-item-2" class="project-card glass reveal"
+                        style="padding: 3rem; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 600px; text-align: center;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem;">Wenceslao Village High School</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">Lubao, Pampanga</p>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">2010 - 2014</p>
+                    </div>
+                    <div id="editable-education-item-3" class="project-card glass reveal"
+                        style="padding: 3rem; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 600px; text-align: center;">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem;">Wenceslao Elementary School</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">Lubao, Pampanga</p>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">2004 - 2010</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Certificates Section -->
+        <section id="awards" class="projects" style="padding-top: 50px;">
+            <div class="container">
+                <h2 class="section-title reveal">Awards & <span class="accent">Certificates</span></h2>
+
+                <div id="editable-awards-container" class="projects-grid editable-region"
+                    style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+
+                    <div class="project-card glass reveal"
+                        style="padding: 3rem; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 600px; text-align: left;">
+                        <ul style="list-style: none; line-height: 2.2; color: var(--text-primary);">
+                            <li><i class="fas fa-award accent" style="margin-right: 10px;"></i> Certificate of
+                                Excellence – Best in Front of the House (January 11, 2021)</li>
+                            <li><i class="fas fa-award accent" style="margin-right: 10px;"></i> Certificate of
+                                Excellence – All Star Certified (January 7, 2020)</li>
+                            <li><i class="fas fa-award accent" style="margin-right: 10px;"></i> Certificate of
+                                Excellence – Best in Counter (July 10, 2019)</li>
+                            <li><i class="fas fa-award accent" style="margin-right: 10px;"></i> Certificate of
+                                Excellence – Crew of the Month (July 2019)</li>
+                            <li><i class="fas fa-award accent" style="margin-right: 10px;"></i> Certificate of
+                                Excellence – Crew of the Month (March 2019)</li>
+                            <li><i class="fas fa-award accent" style="margin-right: 10px;"></i> Certificate of
+                                Excellence – Mini Mouse Award (January 11, 2019)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" style="padding-top: 50px;">
+            <div class="container">
+                <h2 class="section-title reveal">Get in <span class="accent">Touch</span></h2>
+                <div class="contact-container reveal">
+                    <div id="editable-contact" class="contact-info editable-region">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out to me for any opportunities or inquiries.</p>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>yllasdarantinao@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>0907 545 8390</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span style="line-height: 1.4;">Blk 17 Lot 24 Wenceslao Village,<br>San Roque Dau 1,
+                                    Lubao, Pampanga</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--glass-border);">
+                            <h4 style="margin-bottom: 1.5rem; font-size: 1.2rem;">References</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.2rem;">
+                                <strong>Julie Tabernero</strong><br>Call Center Agent<br>Phone: 0916 187 5787
+                            </p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;"><strong>Donna B.
+                                    Regala</strong><br>Store Associate<br>Phone: 0946 347 5705</p>
+                        </div>
+                    </div>
+                    <form class="contact-form glass">
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder="Your Name">
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder="Your Email">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="subject" required placeholder="Subject">
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sally B. Darantinao. All Rights Reserved. &nbsp; <span id="admin-trigger"
+                    style="color: var(--text-secondary); cursor: pointer; opacity: 0.5; font-size: 0.8rem;"><i
+                        class="fas fa-lock"></i> Admin</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
